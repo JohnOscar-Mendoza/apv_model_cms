@@ -4,16 +4,15 @@
 	<title></title>
 </head>
 <body>
-	<?php print $modelId; ?>
-	<?php print $modelName; ?>
-<form>
-	<label for="modelName">Name:</label><input type="text" name="modelName" />
+<form method="post" action="http://localhost:777/apv_model_cms0/index.php/models/add">
+	<label for="ModelName">Name:</label><input type="text" name="modelName" />
 	<label for="age">Age:</label><input type="text" name="age" />
-	<label for="address">Address:</label><input type="text" name="address" />
-	<label for="fbLink">Facebook:</label><input type="text" name="fbLink" />
-	<label for="twitterLink">Twitter:</label><input type="text" name="twitterLink" />
-	<label for="instagramLink">Intagram:</label><input type="text" name="instagramLink" />
-	<label for="imageUpload">Image:</label><input type="file" name="imageUpload" />
+	<label for="Address">Address:</label><input type="text" name="address" />
+	<label for="FbLink">Facebook:</label><input type="text" name="fbLink" />
+	<label for="TwitterLink">Twitter:</label><input type="text" name="twitterLink" />
+	<label for="InstagramLink">Intagram:</label><input type="text" name="instagramLink" />
+	<label for="Image">Image:</label><input type="file" name="Image" />
+	<input type="submit" value="Submit" />
 	
 </form>
 

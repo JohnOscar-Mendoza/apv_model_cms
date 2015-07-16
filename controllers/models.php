@@ -19,17 +19,25 @@ class Models extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('view');
+		$this->load->model('models_model');
+		$data = array();
+		$data['models'] = $this->models_model->view();
+		$this->load->view('view', $data);
+		
+		
 	}
 	public function add()
 	{
-		//$this->load->view('add');
-		//$this->load->model('model_model');
-		//$data = $this->model_model->add();
-		$data = array();
-		$data['modelId'] = '1';
-		$data['modelName'] = 'Diana Prince';
-		$this->load->view('add', $data);
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST')
+		{
+			$this->load->model('models_model');
+			$data = array();
+			$data = $_POST;
+			$this->models_model->add($data);
+		}
+		else
+		{ $this->load->view('add'); }
 	}
 
 }

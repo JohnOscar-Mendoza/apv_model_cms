@@ -62,16 +62,28 @@ $(document).ready(function() {
 
 <div id="templatemo_middle_wrapper">
 	<div id="templatemo_middle">
-    	
-        <div id="templatemo_content">
-        
-            <div id="content_box_wrapper">
+    	<div id="templatemo_content">
+			<div id="content_box_wrapper">
+				<?php
+				//die('<pre>'.print_r($models, true));
+				?>
                 <table id="myTable">
-
-                    <th>#</th><th>Name</th><th>Address</th><th>Facebook</th><th>Twitter</th><th>Instagram</th><th>Image</th><th>&nbsp;</th>
+			
+                    <tr><th>#</th><th>Name</th><th>Address</th><th>Facebook</th><th>Twitter</th><th>Instagram</th><th>Image</th><th>&nbsp;</th></tr>
+					<?php
+					foreach($models as $row)
+					{
+						echo
+							"<tr><td>".$row['ModelID']."</td><td>".$row['ModelName']."</td><td>".$row['Address'].
+							"</td><td>".$row['FbLink']."</td><td>".$row['TwitterLink']."</td><td>".$row['InstagramLink'].
+							"</td><td>".$row['Image']."</td><td>&nbsp;</td></tr>";
+					
+					}
+					?>
+					
 
                 </table>
-
+	
             </div> <!-- content_box_wrapper -->
                     
         </div> <!-- end of templatemo_content -->

@@ -1,11 +1,16 @@
 <?php
 
-class Models_model extends CI_Model()
+class Models_model extends CI_Model
 {
 
-	public function add()
+	public function add($data)
 	{
-		return 1 + 1;
+		$this->db->insert('models', $data);
+	}
+	public function view()
+	{
+		$query = $this->db->get('models');
+		return $query->result_array();
 	}
 }
 
