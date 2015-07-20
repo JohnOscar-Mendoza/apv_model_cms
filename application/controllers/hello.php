@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-class Hello extends CI_Controller {
+require APPPATH . '/libraries/REST_Controller.php';
+class Hello extends REST_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,9 +17,10 @@ class Hello extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function world_get()
 	{
-		$this->load->view('you_view');
+		$data['name'] = 'john';
+		$this->response($data, 200);
 	}
 }
 

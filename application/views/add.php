@@ -19,8 +19,8 @@
         <div id="templatemo_menu">
             <ul>
                 <li><a href="#">Log-in</a></li>
-                <li><a href="http://localhost/p1/index.php/models/view" class="current">Gallery</a></li>
-                <li><a href="http://localhost/p1/index.php/models/add" class="current">Add New</a></li>
+                <li><a href="http://localhost/apv_model_cms/index.php/model/view" class="current">Gallery</a></li>
+                <li><a href="http://localhost/apv_model_cms/index.php/model/add" class="current">Add New</a></li>
             </ul>    	
         </div> <!-- end of templatemo_menu -->
     

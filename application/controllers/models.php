@@ -23,7 +23,9 @@ class Models extends CI_Controller {
 		$data = array();
 		$data['models'] = $this->models_model->view();
 		$this->load->view('view', $data);
-		
+	}
+	public function login()
+	{
 		
 	}
 	public function view()
