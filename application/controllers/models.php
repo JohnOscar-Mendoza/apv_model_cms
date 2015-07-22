@@ -26,18 +26,24 @@ class Models extends CI_Controller {
 		if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			$this->load->model('models_model');
-			$data = array();
-			$data = $_POST;
 			$this->models_model->add($_POST);
 		}
 		$this->load->view('add');
 	}
-	public function edit()
+	public function edit($id)
 	{
-		//$this->load->model('models_model');
-		//$data = array();
-		//$data['models'] = $this->models_model->view();
-		$this->load->view('edit');
+		if($_SERVER['REQUEST_METHOD'] == 'POST')
+		{
+			$this->load->model('models_model');
+			$this->models_model->put($id, $_POST);
+		}
+		
+		$this->load->model('models_model');
+		$data = array();
+		$data['models'] = $this->models_model->editView($id);
+		//die('<pre>'.print_r($data, true));
+		$this->load->view('edit', $data);
+
 	}
 
 }

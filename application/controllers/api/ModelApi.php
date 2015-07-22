@@ -3,6 +3,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 require APPPATH . '/libraries/REST_Controller.php';
 class ModelApi extends REST_Controller {
 
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -25,13 +26,23 @@ class ModelApi extends REST_Controller {
 	}
 	public function model_get()
 	{
-		
+		error_reporting(E_ERROR);
+		//die(print_r($this->get(),true));
+		if($this->get('id'))
+		{
+			$this->load->model('api/modelapi_model');
+			$this->response($this->modelapi_model->getModelWithId($this->get('id'), 200));
+		}
+		if($this->get('name'))
+		{
+			$this->load->model('api/modelapi_model');
+			$this->response($this->modelapi_model->getModelWithName($this->get('name'), 200));
+		}
 		$this->load->model('api/modelapi_model');
 		$this->response($this->modelapi_model->view(), 200);
 	}
 	public function add_post()
-	{
-		
+	{	
 		$this->load->model('api/modelapi_model');
 		$this->modelapi_model->add($this->post());
 		

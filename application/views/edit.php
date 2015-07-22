@@ -35,36 +35,43 @@
 			<div id="content_box_wrapper">
 
                 <form id="comment_form" method="post" action="http://localhost/p1/index.php/models/add">
+					<?php
+					foreach($models as $row)
+					{
+
+					?>
 					<div>
 					<h1>Edit Model: </h1>
 					<label>
-					<span>Name:</span><input id="name" type="text" name="ModelName" />
+					<span>Name:</span><input id="name" type="text" name="ModelName" value="<?php echo $row['ModelName']; ?>" />
 					</label>
 
 					<label>
-					<span>Age:</span><input id="email" type="text" name="Age" />
+					<span>Age:</span><input id="email" type="text" name="Age" value="<?php echo $row['Age']; ?>" />
 					</label>
 
 					<label>
-					<span>Address:</span><input id="subject" type="text" name="Address" />
+					<span>Address:</span><input id="subject" type="text" name="Address" value="<?php echo $row['Address']; ?>" />
 					</label>
 
 					<label>
-					<span>Facebook:</span><input id="subject" type="text" name="FacebookLink" />
+					<span>Facebook:</span><input id="subject" type="text" name="FacebookLink" value="<?php echo $row['FbLink']; ?>" />
 					</label>
 
 					<label>
-					<span>Twitter:</span><input id="subject" type="text" name="TwitterLink" />
+					<span>Twitter:</span><input id="subject" type="text" name="TwitterLink" value="<?php echo $row['TwitterLink']; ?>" />
 					</label>
 
 					<label>
-					<span>Instagram:</span><input id="subject" type="text" name="InstagramLink" />
+					<span>Instagram:</span><input id="subject" type="text" name="InstagramLink" value="<?php echo $row['InstagramLink']; ?>" />
 					</label>
 
 					<label>
 					<span>Image</span><input id="subject" type="text" name="Image" />
 					</label>
-
+					<?php
+					}
+					?>
 
 
 					<input type="button" value="Submit Form" />
