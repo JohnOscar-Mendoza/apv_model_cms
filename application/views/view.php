@@ -75,7 +75,7 @@ $(document).ready(function() {
 							"<tr><td>".$row['ModelID']."</td><td>".$row['ModelName']."</td><td>".$row['Address'].
 							"</td><td>".$row['FbLink']."</td><td>".$row['TwitterLink']."</td><td>".$row['InstagramLink'].
 							"</td><td>".$row['Image']."</td>".
-							"</td><td> <a>Edit</a> <a>Delete</a> </td></tr>";
+							"</td><td> <a href='http://localhost:777/apv_model_cms/index.php/models/edit/".$row['ModelID']."'>Edit</a> <a>Delete</a> </td></tr>";
 					
 					}
 					?>

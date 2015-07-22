@@ -2,21 +2,6 @@
 
 class Models extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
 		$this->load->model('models_model');
@@ -34,8 +19,6 @@ class Models extends CI_Controller {
 		$data = array();
 		$data['models'] = $this->models_model->view();
 		$this->load->view('view', $data);
-		
-		
 	}
 	public function add()
 	{
@@ -45,10 +28,9 @@ class Models extends CI_Controller {
 			$this->load->model('models_model');
 			$data = array();
 			$data = $_POST;
-			$this->models_model->add($data);
+			$this->models_model->add($_POST);
 		}
-		else
-		{ $this->load->view('add'); }
+		$this->load->view('add');
 	}
 	public function edit()
 	{

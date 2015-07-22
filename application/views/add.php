@@ -32,7 +32,7 @@
     	<div id="templatemo_content">
 			<div id="content_box_wrapper">
 
-                <form id="comment_form" method="post" action="http://localhost/p1/index.php/models/add">
+                <form id="comment_form" method="post" action="http://localhost:777/apv_model_cms/index.php/models/add">
 					<div>
 					<h1>Add Model: </h1>
 					<label>
@@ -48,7 +48,7 @@
 					</label>
 
 					<label>
-					<span>Facebook:</span><input id="subject" type="text" name="FacebookLink" />
+					<span>Facebook:</span><input id="subject" type="text" name="FbLink" />
 					</label>
 
 					<label>
@@ -65,7 +65,7 @@
 
 
 
-					<input type="button" value="Submit Form" />
+					<input type="submit" value="Submit Form" />
 					</label>
 
 					</div>
